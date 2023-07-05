@@ -1,0 +1,25 @@
+
+
+{% extends 'base.html' %}
+
+        {% block content %}
+    <h1 style="background-color:#80ffe5">Members</h1>
+        {% for member in members %}
+        <div class="row" style="background-color:#80ffe5">
+            <div class="col" style="background-color:#80ffe5">
+                <div class="card" style="width: 75rem; background-color: #80ffe5; color: black">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ member.firstname }}</h5>
+                        <h5 class="card-title">{{ member.lastname }}</h5>
+                        <p class="card-text" style="font-size: 15px">{{ member.phone }}</p>
+                        <p class="card-text" style="font-size: 15px">{{ member.email }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <a href="add/" class="btn btn-primary">Add Member</a>
+    <td><a href="delete/{{ member.id }}">delete</a></td>
+        {% endfor %}
+
+
+{% endblock %}
